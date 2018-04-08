@@ -1,5 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%% debut de votre code ici %%%
+
 sub(A,B,X):-
     X is A - B.
 
@@ -49,15 +48,6 @@ logSuit([A,B,C,D,E],Y):-
     derivOne([F,G,H,I],X),
    	add(E,X,Y).
 
-
-  %%% fin de votre code  ici  %%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  %%% fin de votre code  ici  %%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-  %%% fin de votre code  ici  %%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 main :- % exemple de programme principal
   writeln('Donner un terme, un prédicat ? (avec un point à la fin de la ligne) '),
