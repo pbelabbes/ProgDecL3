@@ -1,10 +1,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%% debut de votre code ici %%%
+sub(A,B,X):-
+    X is A - B.
+
+add(A,B,X):-
+    X is A + B.
+
+div(A,B,X):-
+    X is A / B.
+
+mult(A,B,X):-
+    X is A * B.
 
 derivSec([X,X,X],X).
 derivSec([X,Y,X],Y).
+
+derivMult([X,X,X],X).
+derivMult([X,Y,X],Y).
+
 derivOne([X,Y,X,Y],X).
 derivOne([X,X,X,X],X).
+
 
 %deriveSeconde
 derivOne([A,B,C,D],X):-
@@ -15,17 +31,13 @@ derivOne([A,B,C,D],X):-
 	add(Y,D,X).	
              
 %derivermultiple
-%derivOne([A,B,C,D],[X,Y]):-
-%	{A = B/A},
- %   {B = C/A},
- %   {C = D/C},
-  %  derivMult([A,B,C],[V,W]).
+derivOne([A,B,C,D],X):-
+	div(B,A,E),
+    div(C,B,F),
+    div(D,C,G),
+    derivMult([E,F,G],Y),
+    mult(D,Y,X).
 
-sub(A,B,X):-
-    X is A - B.
-
-add(A,B,X):-
-    X is A + B.
 
 logSuit([A,B,C,D,E],Y):-
     sub(B,A,F),
