@@ -8,10 +8,11 @@ derivOne([X,X,X,X],X).
 
 %deriveSeconde
 derivOne([A,B,C,D],X):-
-	A is B - A,
-    B is C - B,
-    C is D - C,
-    derivSec([A,B,C],X).
+	sub(B,A,E),
+    sub(C,B,F),
+    sub(D,C,G),
+    derivSec([E,F,G],Y),
+	add(Y,D,X).	
              
 %derivermultiple
 %derivOne([A,B,C,D],[X,Y]):-
@@ -23,14 +24,20 @@ derivOne([A,B,C,D],X):-
 sub(A,B,X):-
     X is A - B.
 
+add(A,B,X):-
+    X is A + B.
+
 logSuit([A,B,C,D,E],Y):-
     sub(B,A,F),
     sub(C,B,G),
     sub(D,C,H),
     sub(E,D,I),
     derivOne([F,G,H,I],X),
-   Y is E + X.
+   	add(E,X,Y).
 
+
+  %%% fin de votre code  ici  %%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   %%% fin de votre code  ici  %%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
