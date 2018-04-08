@@ -14,20 +14,18 @@ derivOne([A,B,C,D],[X,Y]):-
     derivSec([A,B,C],[Y,X]).
              
 %derivermultiple
-derivOne([A,B,C,D],[X,Y]):-
-	{A = B/A},
-    {B = C/A},
-    {C = D/C},
-    derivMult([A,B,C],[V,W]),
-	    
-    .
+%derivOne([A,B,C,D],[X,Y]):-
+%	{A = B/A},
+ %   {B = C/A},
+ %   {C = D/C},
+  %  derivMult([A,B,C],[V,W]).
 
-LogSuit([A,B,C,D,E],Y):-
+logSuit([A,B,C,D,E],Y):-
     {A = B-A},
     {B = C-B},
     {C = D-C},
     {D = E-D },
-    derivOne([A,B,C,D],[X1,X2]),
+    derivOne([A,B,C,D],[_|X2]),
     {Y = E + X2 }.
 
 
@@ -38,7 +36,7 @@ LogSuit([A,B,C,D,E],Y):-
 main :- % exemple de programme principal
   writeln('Donner un terme, un prédicat ? (avec un point à la fin de la ligne) '),
   read(Entree),
-  LogSuit(Entree,Sortie),
+  logSuit(Entree,Sortie),
   writeln(Sortie).
 
 :- main, halt.
