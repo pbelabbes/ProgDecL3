@@ -38,6 +38,8 @@ derivOne([A,B,C,D],X):-
     derivMult([E,F,G],Y),
     mult(D,Y,X).
 
+logSuit([_|R],Y):-
+    logSuit(R,Y).
 
 logSuit([A,B,C,D,E],Y):-
     sub(B,A,F),
@@ -47,6 +49,9 @@ logSuit([A,B,C,D,E],Y):-
     derivOne([F,G,H,I],X),
    	add(E,X,Y).
 
+
+  %%% fin de votre code  ici  %%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   %%% fin de votre code  ici  %%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
